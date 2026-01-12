@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sujal Kamble | Automation Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .status-indicator {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(76, 175, 80, 0.2);
+            border: 2px solid #4CAF50;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 20px 0;
+            background: linear-gradient(45deg, #fff, #ff6ec7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            border-left: 4px solid #ff6ec7;
+        }
+
+        .info-label {
+            font-size: 0.9em;
+            color: #bbb;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        /* Project Section */
+        .section-title {
+            font-size: 2.5em;
+            text-align: center;
+            margin: 60px 0 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6ec7, #764ba2);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        /* OOP Concepts Grid */
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .concept-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 110, 199, 0.4);
+        }
+
+        .concept-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .concept-title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #ff6ec7;
+        }
+
+        .concept-implementation {
+            color: #ddd;
+            margin: 10px 0;
+            font-size: 0.95em;
+        }
+
+        .concept-label {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        /* Code Section */
+        .code-container {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .code-header {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            color: #ff6ec7;
+            border-bottom: 2px solid rgba(255, 110, 199, 0.3);
+            padding-bottom: 10px;
+        }
+
+        pre {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            border-left: 4px solid #ff6ec7;
+        }
+
+        code {
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        /* Architecture Section */
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .arch-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 110, 199, 0.3);
+        }
+
+        .arch-title {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #ff6ec7;
+            text-align: center;
+        }
+
+        .component {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .component-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .component-desc {
+            color: #ddd;
+            font-size: 0.95em;
+        }
+
+        /* Performance Metrics */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, rgba(255, 110, 199, 0.2), rgba(118, 75, 162, 0.2));
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .metric-card:hover {
+            transform: scale(1.05);
+        }
+
+        .metric-value {
+            font-size: 3em;
+            font-weight: bold;
+            color: #ff6ec7;
+            margin: 10px 0;
+        }
+
+        .metric-label {
+            font-size: 1.1em;
+            color: #ddd;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 110, 199, 0.4);
+        }
+
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 4px solid #ff6ec7;
+            object-fit: cover;
+        }
+
+        .team-name {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #ff6ec7;
+        }
+
+        .team-detail {
+            margin: 10px 0;
+            color: #ddd;
+            font-size: 0.95em;
+        }
+
+        .team-label {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+        }
+
+        .footer-text {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .section-title {
+                font-size: 1.8em;
+            }
+            
+            .concepts-grid,
+            .architecture-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="status-indicator">● SYSTEM ACTIVE</div>
+            <h1>AUTOMATION & ROBOTICS PORTFOLIO</h1>
+            <p class="subtitle">Object-Oriented Programming for Intelligent Systems</p>
+            <p style="font-size: 1.2em; margin-top: 20px;">Real-time Automation & Control Systems</p>
+        </header>
+
+        <!-- Personal Info -->
+        <div class="info-card">
+            <h2 style="margin-bottom: 20px; font-size: 2em;">SUJAL KAMBLE</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">USN</div>
+                    <div class="info-value">01FE24BAR049</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Email</div>
+                    <div class="info-value">sujalkamble408@gmail.com</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Institution</div>
+                    <div class="info-value">KLE Technological University</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Program</div>
+                    <div class="info-value">B.E. Automation & Robotics - 3rd Semester</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- OOP Concepts Section -->
+        <h2 class="section-title">Advanced OOP Concepts</h2>
+        <div class="concepts-grid">
+            <div class="concept-card">
+                <div class="concept-icon">📦</div>
+                <h3 class="concept-title">Encapsulation</h3>
+                <p class="concept-implementation">
+                    <span class="concept-label">Implementation:</span> Private attributes with getter/setter methods
+                </p>
+                <p class="concept-implementation">
+                    <span class="concept-label">Advantage:</span> Data protection, controlled access, implementation hiding
+                </p>
+                <p class="concept-implementation">
+                    <span class="concept-label">Why Selected:</span> To protect sensitive control parameters and ensure safe system access
+                </p>
+            </div>
+
+            <div class="concept-card">
+                <div class="concept-icon">🎭</div>
+                <h3 class="concept-title">Abstraction</h3>
+                <p class="concept-implementation">
+                    <span class="concept-label">Implementation:</span> Simple public interfaces over complex internal logic
+                </p>
+                <p class="concept-implementation">
+                    <span class="concept-label">Advantage:</span> Reduced complexity, easier maintenance, modular design
+                </p>
+                <p class="concept-implementation">
+                    <span class="concept-label">Why Selected:</span> To hide complex algorithms behind simple, intuitive methods
+                </p>
+            </div>
+
+            <div class="concept-card">
+                <div class="concept-icon">🧬</div>
+                <h3 class="concept-title">Inheritance</h3>
+                <p class="concept-implementation">
+                    <span class="concept-label">Implementation:</span> Base Controller class with specialized child classes
+                </p>
+                <p class="concept-implementation">
+                    <span class="concept-label">Advantage:</span> Code reuse, polymorphism, extensible design
+                </p>
+                <p class="concept-implementation">
+                    <span class="concept-label">Why Selected:</span> To create reusable patterns for system components
+                </p>
+            </div>
+
+            <div class="concept-card">
+                <div class="concept-icon">🔄</div>
+                <h3 class="concept-title">Polymorphism</h3>
+                <p class="concept-implementation">
+                    <span class="concept-label">Implementation:</span> Interface-based design with multiple implementations
+                </p>
+                <p class="concept-implementation">
+                    <span class="concept-label">Advantage:</span> Flexibility, interchangeable components, runtime binding
+                </p>
+                <p class="concept-implementation">
+                    <span class="concept-label">Why Selected:</span> To support different control algorithms and sensor types
+                </p>
+            </div>
+
+            <div class="concept-card">
+                <div class="concept-icon">⭐</div>
+                <h3 class="concept-title">SOLID Principles</h3>
+                <p class="concept-implementation">
+                    <span class="concept-label">Implementation:</span> Single Responsibility, Open/Closed, Dependency Inversion
+                </p>
+                <p class="concept-implementation">
+                    <span class="concept-label">Advantage:</span> Scalable, maintainable, testable code architecture
+                </p>
+                <p class="concept-implementation">
+                    <span class="concept-label">Why Selected:</span> Professional software engineering practices for industrial automation
+                </p>
+            </div>
+
+            <div class="concept-card">
+                <div class="concept-icon">🎨</div>
+                <h3 class="concept-title">Design Patterns</h3>
+                <p class="concept-implementation">
+                    <span class="concept-label">Implementation:</span> Observer, Strategy, Factory patterns
+                </p>
+                <p class="concept-implementation">
+                    <span class="concept-label">Advantage:</span> Proven solutions, flexibility, easier collaboration
+                </p>
+                <p class="concept-implementation">
+                    <span class="concept-label">Why Selected:</span> Industry-standard patterns for robust automation software
+                </p>
+            </div>
+
+            <div class="concept-card">
+                <div class="concept-icon">🔗</div>
+                <h3 class="concept-title">Composition</h3>
+                <p class="concept-implementation">
+                    <span class="concept-label">Implementation:</span> System has-a Sensor, has-a Actuator, has-a Controller
+                </p>
+                <p class="concept-implementation">
+                    <span class="concept-label">Advantage:</span> Flexible, modular, avoids inheritance hierarchy problems
+                </p>
+                <p class="concept-implementation">
+                    <span class="concept-label">Why Selected:</span> To build complex systems from simple, interchangeable components
+                </p>
+            </div>
+
+            <div class="concept-card">
+                <div class="concept-icon">💉</div>
+                <h3 class="concept-title">Dependency Injection</h3>
+                <p class="concept-implementation">
+                    <span class="concept-label">Implementation:</span> Constructor injection for loose coupling
+                </p>
+                <p class="concept-implementation">
+                    <span class="concept-label">Advantage:</span> Testable, configurable, reduces tight coupling
+                </p>
+                <p class="concept-implementation">
+                    <span class="concept-label">Why Selected:</span> To enable unit testing and easy swapping of components
+                </p>
+            </div>
+        </div>
+
+        <!-- Video Demonstration -->
+        <h2 class="section-title">Live Demonstration</h2>
+        <div class="info-card" style="background: rgba(0, 0, 0, 0.5);">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <video controls style="width: 100%; border-radius: 15px; border: 2px solid rgba(255, 110, 199, 0.3);">
+                    <source src="https://vengurlekar.co.in/OOP-Portfolio/video/WhatsApp Video 2026-01-12 at 8.39.11 AM.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p style="text-align: center; margin-top: 20px; color: #ddd; font-size: 1.1em;">Watch our automation system in action</p>
+            </div>
+        </div>
+
+        <!-- Team Photo -->
+        <h2 class="section-title">Our Team</h2>
+        <div class="info-card" style="background: rgba(0, 0, 0, 0.5);">
+            <img src="https://vengurlekar.co.in/OOP-Portfolio/images/WhatsApp Image 2026-01-12 at 8.26.18 AM.jpeg" 
+                 alt="Team Photo" 
+                 style="width: 100%; max-width: 900px; display: block; margin: 0 auto; border-radius: 15px; border: 2px solid rgba(255, 110, 199, 0.3);">
+            <p style="text-align: center; margin-top: 20px; color: #ddd; font-size: 1.1em;">Team behind the innovation</p>
+        </div>
+
+        <!-- System Architecture -->
+        <h2 class="section-title">System Architecture</h2>
+        <div class="architecture-grid">
+            <div class="arch-card">
+                <h3 class="arch-title">CLIENT SYSTEM</h3>
+                <div class="component">
+                    <div class="component-name">SensorInterface</div>
+                    <div class="component-desc">Real-time data acquisition and preprocessing</div>
+                </div>
+                <div class="component">
+                    <div class="component-name">DataProcessor</div>
+                    <div class="component-desc">Signal processing and analysis algorithms</div>
+                </div>
+                <div class="component">
+                    <div class="component-name">NetworkClient</div>
+                    <div class="component-desc">TCP/IP communication with control systems</div>
+                </div>
+            </div>
+
+            <div class="arch-card">
+                <h3 class="arch-title">CONTROL SYSTEM</h3>
+                <div class="component">
+                    <div class="component-name">SystemController</div>
+                    <div class="component-desc">Orchestrates all operations and safety checks</div>
+                </div>
+                <div class="component">
+                    <div class="component-name">ActuatorManager</div>
+                    <div class="component-desc">PWM control and motor coordination</div>
+                </div>
+                <div class="component">
+                    <div class="component-name">SafetyMonitor</div>
+                    <div class="component-desc">Real-time safety monitoring and collision avoidance</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Code Implementation -->
+        <h2 class="section-title">OOP Code Implementation</h2>
+        
+        <div class="code-container">
+            <div class="code-header">Client Side (Data Processing & Control Logic)</div>
+            <pre><code>import socket
+import time
+
+# ================= SENSOR INTERFACE CLASS =================
+class SensorInterface:
+    def __init__(self, sensor_type="default"):
+        self._sensor_type = sensor_type
+        self._data_buffer = []
+        self._calibration_offset = 0.0
+    
+    def read_data(self):
+        """Abstraction: Simple interface for complex sensing"""
+        raw_data = self._acquire_raw_data()
+        return self._process_data(raw_data)
+    
+    def _acquire_raw_data(self):
+        """Encapsulation: Private method for data acquisition"""
+        # Simulated sensor reading
+        return {"value": 100, "timestamp": time.time()}
+    
+    def _process_data(self, raw_data):
+        """Encapsulation: Private data processing"""
+        return raw_data["value"] + self._calibration_offset
+
+
+# ================= CONTROL CLIENT CLASS =================
+class ControlClient:
+    def __init__(self, host, port):
+        self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.sensor = SensorInterface()  # Composition
+        
+    def send_command(self, cmd):
+        """Abstraction: Simple command interface"""
+        self.socket.sendall((cmd + "\n").encode())
+    
+    def process_and_send(self):
+        """Demonstrates OOP workflow"""
+        data = self.sensor.read_data()
+        
+        if data > 150:
+            self.send_command("ACTIVATE")
+        else:
+            self.send_command("STANDBY")</code></pre>
+        </div>
+
+        <div class="code-container">
+            <div class="code-header">Controller Side (Actuation & Safety)</div>
+            <pre><code>import socket
+
+# ================= BASE ACTUATOR CLASS =================
+class Actuator:
+    def __init__(self, actuator_id):
+        self._id = actuator_id
+        self._state = "IDLE"
+    
+    def activate(self):
+        """Polymorphism: Base method to be overridden"""
+        self._state = "ACTIVE"
+        print(f"Actuator {self._id} activated")
+    
+    def deactivate(self):
+        self._state = "IDLE"
+
+
+# ================= MOTOR ACTUATOR (INHERITANCE) =================
+class MotorActuator(Actuator):
+    def __init__(self, actuator_id, speed=0):
+        super().__init__(actuator_id)  # Inheritance
+        self._speed = speed
+    
+    def activate(self):
+        """Polymorphism: Overridden method"""
+        super().activate()
+        self._set_speed(self._speed)
+    
+    def _set_speed(self, speed):
+        """Encapsulation: Private speed control"""
+        print(f"Motor {self._id} speed set to {speed}")
+
+
+# ================= SYSTEM CONTROLLER =================
+class SystemController:
+    def __init__(self):
+        # Dependency Injection through composition
+        self.motor = MotorActuator("MOTOR_1", speed=75)
+        self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        
+    def run(self):
+        """Main control loop"""
+        while True:
+            cmd = self._receive_command()
+            self._process_command(cmd)
+    
+    def _process_command(self, cmd):
+        """Encapsulation: Private command processing"""
+        if cmd == "ACTIVATE":
+            self.motor.activate()
+        elif cmd == "STANDBY":
+            self.motor.deactivate()</code></pre>
+        </div>
+
+        <!-- Performance Metrics -->
+        <h2 class="section-title">Performance Metrics</h2>
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">50ms</div>
+                <div class="metric-label">Response Time</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">30 Hz</div>
+                <div class="metric-label">Control Loop</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">95%</div>
+                <div class="metric-label">System Accuracy</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">99.9%</div>
+                <div class="metric-label">Uptime</div>
+            </div>
+        </div>
+
+        <!-- Team Members Section -->
+        <h2 class="section-title">Team Members</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="https://vengurlekar.co.in/OOP-Portfolio/images/Gemini_Generated_Image_knwxogknwxogknwx.png" alt="Shlok Vengurlekar" class="team-photo">
+                <h3 class="team-name">Shlok Vengurlekar</h3>
+                <div class="team-detail"><span class="team-label">USN:</span> 01FE24BAR002</div>
+                <div class="team-detail"><span class="team-label">Email:</span> shlok@vengurlekar.co.in</div>
+            </div>
+
+            <div class="team-card">
+                <img src="https://vengurlekar.co.in/OOP-Portfolio/images/Gemini_Generated_Image_9z7dgj9z7dgj9z7d.png" alt="Godwin Anthony" class="team-photo">
+                <h3 class="team-name">Godwin Anthony</h3>
+                <div class="team-detail"><span class="team-label">USN:</span> 01FE24BAR022</div>
+                <div class="team-detail"><span class="team-label">Email:</span> godwinanthonypullikotil@gmail.com</div>
+            </div>
+
+            <div class="team-card">
+                <img src="https://vengurlekar.co.in/OOP-Portfolio/images/Gemini_Generated_Image_goauvegoauvegoau.png" alt="Chidanand Karennavar" class="team-photo">
+                <h3 class="team-name">Chidanand Karennavar</h3>
+                <div class="team-detail"><span class="team-label">USN:</span> 01FE24BAR027</div>
+                <div class="team-detail"><span class="team-label">Email:</span> chidanandkarannavar36@gmail.com</div>
+            </div>
+
+            <div class="team-card">
+                <img src="https://vengurlekar.co.in/OOP-Portfolio/images/Gemini_Generated_Image_vlout7vlout7vlou.png" alt="Sujal Kamble" class="team-photo">
+                <h3 class="team-name">Sujal Kamble</h3>
+                <div class="team-detail"><span class="team-label">USN:</span> 01FE24BAR049</div>
+                <div class="team-detail"><span class="team-label">Email:</span> sujalkamble408@gmail.com</div>
+            </div>
+
+            <div class="team-card">
+                <img src="https://vengurlekar.co.in/OOP-Portfolio/images/Gemini_Generated_Image_cguno4cguno4cgun.png" alt="Pavan Kamat" class="team-photo">
+                <h3 class="team-name">Pavan Kamat</h3>
+                <div class="team-detail"><span class="team-label">USN:</span> 01FE24BAR003</div>
+                <div class="team-detail"><span class="team-label">Email:</span> pavanashreekamat@gmail.com</div>
+            </div>
+        </div>
+
+        <!-- System Status -->
+        <div class="info-card" style="margin-top: 40px; background: rgba(0, 0, 0, 0.4);">
+            <h3 style="margin-bottom: 15px; font-size: 1.5em;">System Status Monitor</h3>
+            <p style="margin: 10px 0; font-family: monospace;">Initializing Automation System...</p>
+            <p style="margin: 10px 0; font-family: monospace;">Loading OOP frameworks...</p>
+            <p style="margin: 10px 0; font-family: monospace;">Establishing communication protocols...</p>
+            <p style="margin: 10px 0; font-family: monospace;">System controllers armed and ready</p>
+            <p style="margin: 10px 0; font-family: monospace; color: #4CAF50;">✓ All systems operational. Metrics nominal.</p>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <h3 style="font-size: 1.8em; margin-bottom: 15px;">AUTOMATION & ROBOTICS PORTFOLIO</h3>
+            <p class="footer-text">Object-Oriented Programming for Intelligent Systems</p>
+            <p class="footer-text" style="margin-top: 20px;">Built with OOP Principles & Modern Design</p>
+            <p class="footer-text" style="margin-top: 20px; color: #ff6ec7;">© 2025 Sujal Kamble | KLE Technological University</p>
+        </footer>
+    </div>
+</body>
+</html>
